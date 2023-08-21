@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Aadhar Details</title>
+    <style>
+        .navbar {
+            background-color: #3498db; 
+            padding: 10px; 
+            font-size: 30px;
+        }
+        
+  
+        .nav-list {
+            list-style: none; 
+            padding: 0;
+                display: flex; 
+            justify-content: center; 
+        }
+        
+   
+        .nav-item {
+            margin: 0 15px; 
+        }
+        
+     
+        .nav-item a {
+            text-decoration: none; 
+            color: white; 
+            transition: color 0.3s; 
+        }
+        
+      
+        .nav-item a:hover {
+            color: #f39c12;
+        }
+        
+       
+        .nav-item:hover {
+            transform: scale(1.1); 
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url("/static/image2");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin-top: 0;
+        }
+        .container {
+            display: grid;
+            place-items: center;
+            font-size: 20px;
+          font-style: bold;
+        }
+    </style>    
+        
+        
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="nav-list">
+            
+            <li class="nav-item"><a href="/">Home</a></li>
+            <li class="nav-item"><a href="/enterdata">Adhar Details</a></li>
+            <li class="nav-item"><a href="/enteradharno">View Details</a></li>
+            <li class="nav-item"><a href="https://www.mohfw.gov.in/pdf/FAQsCOVID19vaccinesvaccinationprogramWebsiteupload27Sep.pdf">FAQs</a></li>
+            <li class="nav-item"><a href="https://covid19.karnataka.gov.in/page/Helpline/en">Helpline</a></li>
+        </ul>
+    </nav>
+    
+ 
+
+    
+
+<div class="container">
+    <h3>DETAILS OF THE ENTERED ADHAR NO</h3>
+
+    {% if result %}
+
+        <p>Aadhar Number: {{ result['adhar_no'] }}</p>
+        <p>Name: {{ result['name'] }}</p>
+        <p>Age: {{ result['age'] }}</p> 
+        <p>Dose: {{ result['dose'] }}</p> 
+        
+        {% endif %}
+        </div>
+        
+</body>
+</html>
+

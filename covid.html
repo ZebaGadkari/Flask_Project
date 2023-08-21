@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>\
+    <style>
+        .navbar {
+            background-color:#3498db;
+            padding: 10px;
+            font-size: 30px;
+            margin-top: -22px;
+        }
+        
+
+        .nav-list {
+            list-style: none;
+            padding: 0; 
+                display: flex; 
+            justify-content: center; 
+        }
+        
+        .nav-item {
+            margin: 0 15px;
+        }
+        
+        .nav-item a {
+            text-decoration: none; 
+            color: white; 
+            transition: color 0.3s; 
+        }
+        
+    
+        .nav-item a:hover {
+            color: #060504; 
+        }
+   
+        .nav-item:hover {
+            transform: scale(1.1); 
+        }
+        body {
+            font-style: bold;
+            font-size: 20px;
+            margin: 0;
+            padding: 0;
+            background-image: url("/static/image2");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+       
+        }
+        .container {
+            display: grid;
+            place-items: center;
+         
+          
+        }
+    </style>    
+        
+        
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="nav-list">
+            
+            <li class="nav-item"><a href="/">Home</a></li>
+            <li class="nav-item"><a href="/enterdata">Adhar Details</a></li>
+            <li class="nav-item"><a href="/enteradharno">View Details</a></li>
+            <li class="nav-item"><a href="https://www.mohfw.gov.in/pdf/FAQsCOVID19vaccinesvaccinationprogramWebsiteupload27Sep.pdf">FAQs</a></li>
+            <li class="nav-item"><a href="https://covid19.karnataka.gov.in/page/Helpline/en">Helpline</a></li>
+        </ul>
+    </nav>
+    
+
+    <div class="container">
+    <h1>Enter Aadhar Card Details</h1>
+    
+    <form action="{{ url_for('insertdata') }}" method="POST" >
+        
+        <label for="adhar_no">Aadhar Number:</label>
+        <input type="number" id="adhar_no" name="adhar_no" required><br><br>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br><br>
+        <label for="mobile_no">Mobile Number:</label>
+        <input type="tel" id="mobile_no" name="mobile_no" required><br><br>
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required><br><br>
+        <label for="email_id">email_id:</label>
+        <input type="email" id="email" name="email_id" required><br><br>
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select><br><br>
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="4" required></textarea><br><br>
+        <label for="dose">Dose:</label>
+        <input type="number" id="dose" name="dose" required><br><br>
+        <input type="submit" name="submit" value="Submit">
+    </form>
+    </div>
+</body>
+</html>
